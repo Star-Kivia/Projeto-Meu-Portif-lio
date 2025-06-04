@@ -331,6 +331,28 @@
                         </div>
                         <button type="submit" class="btn">Enviar Mensagem</button>
                     </form>
+                     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                    <script>
+                        emailjs.init("UFW64wyZGsPsxlXs-")
+                        document.getElementById("contactForm")
+                            .addEventListener("submit", function (event) {
+                                event.preventDefault();
+
+                                emailjs.send("kiviaestrela", "template_lhp6ns8", {
+                                    from_name: document.getElementById("name").value,
+                                    reply_to: document.getElementById("email").value,
+                                    subject: document.getElementById("subject").value,
+                                    message: document.getElementById("message").value
+                                })
+                                    .then(() => {
+                                        alert("Mensagem Enviada com Sucesso !!")
+                                    })
+                                    .catch((error) => {
+                                        console.error("Erro ao enviar:", error);
+                                        alert("Erro ao enviar a mensagem. Tente novamente.");
+                                    });
+                            });
+                    </script>
                 </div>
             </div>
         </div>
