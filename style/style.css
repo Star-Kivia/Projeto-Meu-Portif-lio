@@ -808,12 +808,13 @@ footer {
 }
 
 #typing-subtitle {
-    overflow: hidden;
+    overflow-wrap:break-word;
     border-right: 0.15em solid var(--primary);
-    white-space: nowrap;
+    white-space:nowrap;
+    max-width: 100%;
     margin: 0 auto;
     letter-spacing: 0.15em;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation: typing 4.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -932,4 +933,11 @@ footer {
     .profile-image {
         max-width: 100%;
     }
+}
+
+@media(max-width: 600px){
+    #typing-subtitle{
+        font-size: 6vw;
+        animation: none;
+    }   
 }
