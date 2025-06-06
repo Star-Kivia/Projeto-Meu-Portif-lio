@@ -810,7 +810,7 @@ footer {
 #typing-subtitle {
     overflow-wrap:break-word;
     border-right: 0.15em solid var(--primary);
-    white-space:normal;
+    white-space:nowrap;
     max-width: 100%;
     margin: 0 auto;
     letter-spacing: 0.15em;
